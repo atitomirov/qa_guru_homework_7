@@ -21,7 +21,7 @@ public class RegistrationWithTestDataTests extends TestBase {
                 .setBirthDate(day, month, year)
                 .setSubjects(subject)
                 .setHobbies(hobbies)
-                .setPicture(uploadPath)
+                .setPicture(imageUploadPath)
                 .setAddress(currentAddress)
                 .setState(state)
                 .setCity(city)
@@ -35,7 +35,7 @@ public class RegistrationWithTestDataTests extends TestBase {
                 .verifyResult("Date of Birth", String.format("%s %s,%s", day, month, year))
                 .verifyResult("Subjects", subject)
                 .verifyResult("Hobbies", hobbies)
-                .verifyResult("Picture", "1.jpg")
+                .verifyResult("Picture", imageName)
                 .verifyResult("Address", currentAddress)
                 .verifyResult("State and City", state + " " + city);
     }

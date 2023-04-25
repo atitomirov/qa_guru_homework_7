@@ -17,32 +17,33 @@ public class TestData {
             hobbies = faker.options().option("Sports", "Reading", "Music"),
             subject = faker.options().option("English", "Maths"),
             mobile = faker.phoneNumber().subscriberNumber(10),
-            uploadPath = "src/test/resources/1.jpg",
+            imageUploadPath = "src/test/resources/1.jpg",
+            imageName = "1.jpg",
             state = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan"),
             city = city();
 
     public static String city() {
-        String city;
+        String varCity;
         switch (state) {
-            case ("NCR") -> {
-                city = faker.options().option("Delhi", "Gurgaon", "Noida");
-                return city;
-            }
-            case ("Uttar Pradesh") -> {
-                city = faker.options().option("Agra", "Lucknow", "Merrut");
-                return city;
-            }
-            case ("Haryana") -> {
-                city = faker.options().option("Karnal", "Panipat");
-                return city;
-            }
-            case ("Rajasthan") -> {
-                city = faker.options().option("Jaipur", "Jaiselmer");
-                return city;
-            }
-            default -> {
+            case "NCR":
+                varCity = faker.options().option("Delhi", "Gurgaon", "Noida");
+                return varCity;
+
+            case "Uttar Pradesh":
+                varCity = faker.options().option("Agra", "Lucknow", "Merrut");
+                return varCity;
+
+            case "Haryana":
+                varCity = faker.options().option("Karnal", "Panipat");
+                return varCity;
+
+            case "Rajasthan":
+                varCity = faker.options().option("Jaipur", "Jaiselmer");
+                return varCity;
+
+            default:
                 return "";
-            }
+
         }
     }
 
