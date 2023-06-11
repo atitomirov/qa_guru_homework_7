@@ -15,7 +15,7 @@ public class RemoteTestBase {
 
     @BeforeAll
     static void beforeAll() {
-        //String browser = System.getProperty("browser");
+        String browser = System.getProperty("browser");
         //String browserVersion = System.getProperty("browserVersion");
         //String browserSize = System.getProperty("browserSize");
         //String webDriverHost = System.getProperty("webDriverHost");
@@ -23,7 +23,7 @@ public class RemoteTestBase {
 
         //Configuration.baseUrl="https://" + baseUrl;
         //Configuration.pageLoadStrategy="eager";
-        //Configuration.browser = browser;
+        Configuration.browser = browser;
         //Configuration.browserVersion = browserVersion;
         //Configuration.browserSize = browserSize;
         //Configuration.remote = String.format("https://user1:1234@%s/wd/hub", webDriverHost);
