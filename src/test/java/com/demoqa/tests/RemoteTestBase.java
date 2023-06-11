@@ -16,11 +16,11 @@ public class RemoteTestBase {
     @BeforeAll
     static void beforeAll() {
 
-        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+        Configuration.baseUrl = System.getProperty("base_url", "https://demoqa.com");
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browser_version", "100");
-        Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.remote = System.getProperty("remote_url", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
         Configuration.timeout = 10000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
