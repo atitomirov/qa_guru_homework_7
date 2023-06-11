@@ -23,15 +23,22 @@ public class RemoteTestBase {
 
         //Configuration.baseUrl="https://" + baseUrl;
         //Configuration.pageLoadStrategy="eager";
-        Configuration.browser = browser;
+        //Configuration.browser = browser;
         //Configuration.browserVersion = browserVersion;
         //Configuration.browserSize = browserSize;
         //Configuration.remote = String.format("https://user1:1234@%s/wd/hub", webDriverHost);
 
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        //Configuration.baseUrl = "https://demoqa.com";
+        //Configuration.browserSize = "1920x1080";
+        //Configuration.pageLoadStrategy = "eager";
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+        Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browser_version", "100");
+        Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.timeout = 10000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
